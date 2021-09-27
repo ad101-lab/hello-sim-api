@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message ConnectionRequest {
+    enum ConnectionType {
+        COMPUTER = 0;
+        VIEW = 1;
+    }
+    ConnectionType type = 1;
+}
+
+message ConnectionResponse {
+    
+}
