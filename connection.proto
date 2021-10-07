@@ -14,16 +14,16 @@ service HelloSim {
 
 message ConnectionRequest {
     enum ConnectionType {
-        COMPUTER = 1;
-        VIEW = 2;
+        COMPUTER = 0;
+        VIEW = 1;
     }
-    ConnectionType type = 2;
+    ConnectionType type = 1;
 }
 
 message ConnectionResponse {
     enum Status {
-        SUCCESS = 1;
-        COMPUTER_ALREADY_CONNECTED = 2;
+        SUCCESS = 0;
+        COMPUTER_ALREADY_CONNECTED = 1;
     }
     Status status = 1;
 }
@@ -35,10 +35,10 @@ message UpdateControlsRequest {
 
 message UpdateControlsResponse {
     enum Status {
-        SUCCESS = 1;
-        INSUFFICENT_PERMISSION = 2;
+        SUCCESS = 0;
+        INSUFFICENT_PERMISSION = 1;
     }
-    Status status = 2;
+    Status status = 1;
 }
 
 
@@ -48,8 +48,8 @@ message UpdateViewRequest {
 
 message UpdateViewResponse {
     enum Status {
-        SUCCESS = 1;
-        INSUFFICENT_PERMISSION = 2;
+        SUCCESS = 0;
+        INSUFFICENT_PERMISSION = 1;
     }
-    Status status = 2;
+    Status status = 1;
 }
