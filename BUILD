@@ -1,4 +1,5 @@
 
+# Connection Proto
 package(default_visibility = ["//visibility:public"])
 
 java_proto_library (
