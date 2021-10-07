@@ -1,5 +1,17 @@
 syntax = "proto3";
 
+package HelloSim;
+
+service HelloSim {
+    // Function for connection
+    rpc Connection (ConnectionRequest) returns (ConnectionResponse) {}
+
+    rpc ControlsUpdate (UpdateControlsRequest) returns (UpdateControlsResponse) {}
+    rpc PostionUpdate (UpdateViewRequest) returns (UpdateViewResponse) {}
+    
+}
+
+
 message ConnectionRequest {
     enum ConnectionType {
         COMPUTER = 0;
@@ -9,5 +21,35 @@ message ConnectionRequest {
 }
 
 message ConnectionResponse {
+    enum Status {
+        SUCCESS = 0;
+        COMPUTER_ALREADY_CONNECTED = 1;
+    }
+    Status status = 1;
+}
+
+
+message UpdateControlsRequest {
+
+}
+
+message UpdateControlsResponse {
+    enum Status {
+        SUCCESS = 0;
+        INSUFFICENT_PERMISSION = 1;
+    }
+    Status status = 1;
+}
+
+
+message UpdateViewRequest {
     
+}
+
+message UpdateViewResponse {
+    enum Status {
+        SUCCESS = 0;
+        INSUFFICENT_PERMISSION = 1;
+    }
+    Status status = 1;
 }
