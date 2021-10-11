@@ -2,13 +2,12 @@ syntax = "proto3";
 
 package HelloSim;
 
-service HelloSim {
+service ComputerRpc {
     // Function for connection
     rpc Connection (ConnectionRequest) returns (ConnectionResponse) {}
 
-    rpc ControlsUpdate (UpdateControlsRequest) returns (UpdateControlsResponse) {}
-    rpc PostionUpdate (UpdateViewRequest) returns (UpdateViewResponse) {}
-    
+    rpc Update (UpdateControlsRequest) returns (UpdateControlsResponse) {}
+    rpc GetPosition ()
 }
 
 
