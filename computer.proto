@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package HelloSim;
+
+service ComputerRpc {
+    // Function for connection
+    rpc Connection (ConnectionRequest) returns (ConnectionResponse) {}
+
+    rpc Update (UpdateRequest) returns (UpdateResponse) {}
+    rpc GetPosition (GetPositionRequest) returns (GetPositionResponse) {}
+}
+
+
+message ConnectionRequest {
+    enum ConnectionType {
+        COMPUTER = 0;
+        VIEW = 1;
+    }
+    ConnectionType type = 1;
+}
+
+message ConnectionResponse {
+}
+
+
+message UpdateRequest {
+    
+}
+
+message UpdateResponse {
+}
+
+message GetPositionRequest {
+    bool randomize = 1;
+    float randomizer = 2;
+}
+
+message GetPositionResponse {
+    float positionX = 1;
+    float positionY = 2;
+    float positionz = 3;
+
+    float velocityX = 4;
+    float velocityY = 5;
+    float velocityZ = 6;
+
+    float accelX = 7;
+    float accelY = 8;
+    float accelZ = 9;
+}
