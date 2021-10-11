@@ -3,16 +3,16 @@
 package(default_visibility = ["//visibility:public"])
 
 java_proto_library (
-    name = "connection_java_proto",
-    deps = ["connection_proto"],
+    name = "ComputerJavaProto",
+    deps = ["ComputerProto"],
 )
 
 cc_proto_library (
-    name = "connection_cc_proto",
-    deps = ["connection_proto"]
+    name = "ComputerCcProto",
+    deps = ["ComputerProto"]
 )
 
 proto_library (
-    name = "connection_proto",
-    srcs = ["connection.proto"],
+    name = "ComputerProto",
+    srcs = ["computer.proto"],
 )
